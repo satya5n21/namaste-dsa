@@ -17,4 +17,4 @@ var removeElement = function (nums, val) {
 
 console.log(removeElement([3, 2, 2, 3], 3));
 
-// [studied till 12:52] however problem is submitted and succeeded all testcase
+// for this 2 pointer pattern, x is maintaining the position while i iterates and checks what needs to be shifted
