@@ -2,18 +2,24 @@
  * @param {number} n
  * @return {number}
  */
-// with recursion
+// with recursion solution 1
 var fib = function (n, prev = 0, curr = 1) {
+    if (n <= 1) return n;
+    return fib(n - 1) + fib(n - 2);
+}
+
+// with recursion solution 2
+var fib2 = function (n, prev = 0, curr = 1) {
     if (n === 0) return prev;
 
     let temp = curr;
     curr = curr + prev;
     prev = temp;
-    return fib(--n, prev, curr);
+    return fib2(--n, prev, curr);
 };
 
 // with help of for loop
-var fib2 = function (n) {
+var fib3 = function (n) {
     let prev = 0;
     let curr = 1;
     for (let i = 0; i < n; i++) {
@@ -25,7 +31,7 @@ var fib2 = function (n) {
 }
 
 // with help of for loop + array
-var fib3 = function (n) {
+var fib4 = function (n) {
     if (n === 0) return 0;
 
     let arr = [0, 1];
